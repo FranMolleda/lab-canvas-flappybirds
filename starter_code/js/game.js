@@ -84,5 +84,17 @@ const Game = {
        console.log('game over')
      },
   
+    isCollision: function() {
+    //colisiones genéricas
+      // (p.x + p.w > o.x && o.x + o.w > p.x && p.y + p.h > o.y && o.y + o.h > p.y )
+       this.obstacles.some(obs => (this.player.posX + this.player.width > obs.posX && obs.posX + obs.width > this.player.posX && this.player.posY + this.player.height > obs.posY && obs.posY + obs.height > this.player.posY ))
+       this.obstaclesTop.some(obs => (this.player.posX + this.player.width > obs.posX && obs.posX + obs.width > this.player.posX && this.player.posY + this.player.height > obs.posY && obs.posY + obs.height > this.player.posY ))
+      
+    },
+  
+    clearObstacles: function() {
+      this.obstacles = this.obstacles.filter(obstacle => (obstacle.posX >= 0))
+      this.obstaclesTop = this.obstaclesTop.filter(obstacle => (obstacle.posX >= 0))
 
+     }
   }

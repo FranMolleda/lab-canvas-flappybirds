@@ -1,13 +1,13 @@
 class Obstacle {
-  constructor(ctx, image, width, height, gameWidth, gameHeight) {
+  constructor(ctx, image, posX, posY, width, height) {
     this.ctx = ctx;
-    this.width = 80;
+    this.width = width;
     this.height = height;
     this.image = new Image();
     this.image.src = image;
 
-    this.posX = gameWidth +400;
-    this.posY = gameHeight;
+    this.posX = 700;
+    this.posY = posY
 
     this.vx = 6;
   }

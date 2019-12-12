@@ -44,7 +44,7 @@ const Game = {
 
   reset: function() {
     this.background = new Background(this.ctx, this.width, this.height);
-    this.player = new Player(this.ctx, 40, 40,'./images/flappy.png', this.width,this.height, this.playerKeys);
+    this.player = new Player(this.ctx, './images/flappy.png', this.posX, this.posY, 40, 40, this.playerKeys);
     this.obstacles = [];
     this.obstaclesTop = [];
     ScoreBoard.init(this.ctx, this.score)
@@ -73,8 +73,8 @@ const Game = {
 
   generateObstacles: function() {
     this.posY=Math.floor(Math.random()*(280-450))+250;
-    this.obstaclesTop.push(new Obstacle(this.ctx,'./images/obstacle_top.png', this.posX, this.posY-this.height,80, this.height))
-    this.obstacles.push(new Obstacle(this.ctx,'./images/obstacle_bottom.png', this.posX, this.posY+150, 80, this.height))
+    this.obstaclesTop.push(new Obstacle(this.ctx,'./images/obstacle_top.png', this.posX, this.posY-this.height,100, this.height))
+    this.obstacles.push(new Obstacle(this.ctx,'./images/obstacle_bottom.png', this.posX, this.posY+150, 100, this.height))
     },
 
     clearObstacles: function() {

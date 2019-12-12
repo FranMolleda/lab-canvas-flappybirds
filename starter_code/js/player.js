@@ -1,5 +1,5 @@
 class Player {
-    constructor(ctx, width, height,image, gameWidth, gameHeight, keys) {
+    constructor(ctx,image, posX, posY, width, height, keys) {
       this.ctx = ctx;
       this.width = width;
       this.height = height;
@@ -8,11 +8,9 @@ class Player {
       this.image.src = image;
   
       this.posX = 100;
-      this.posY = gameHeight/2 - this.height;
-      this.posY0 = gameHeight/2 - this.height;
+      this.posY = 350;
       this.vy = 2;
       this.gravity = 0.3;
-      this.gameWidth = gameWidth;
   
       this.frames = 3;
       this.framesIndex = 0;
